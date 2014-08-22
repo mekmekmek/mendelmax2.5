@@ -1,0 +1,41 @@
+l1=30;
+l2=55;
+h=3;
+r5=2.5*1.08;
+r3=1.5*1.08;
+difference(){
+cube([l1,l2,h]);
+translate([0,-l2/3,0]){cube([l1,l2,h]);}
+hull(){for(i=[0:1]){translate([l1-7,38+(5+r5)-(2*(1-i)),0]){cylinder(2*h,r5,r5,true);}}}
+hull(){for(i=[0:1]){translate([l1-23,38+(5+r5)-(2*(1-i)),0]){cylinder(2*h,r5,r5,true);}}}
+//translate([l1-23,(5+r3),0]){cylinder(2*h,r3,r3,true);}
+//translate([l1-23,20+(5+r3),0]){cylinder(2*h,r3,r3,true);}
+}
+h2=15;
+l3=40;
+dy=16;
+difference(){
+translate([-h2,l2*2/3,0]){cube([h2,l2/3,l3]);}
+translate([-h2+3,l2*2/3,6]){cube([h2-6,l2/3,l3]);}
+translate([-h2,(l2*2/3)+(dy/2),6]){cube([h2,l2/3-dy,l3]);}
+}
+
+
+translate([-h2*3,l2*2/3,0]){
+	difference(){
+		cube([h2-6-1,l2/3-1,l3*0.75]);
+		for(i=[7,17]){translate([-5,l2/6,i]){
+		rotate([0,90,0]){cylinder(30,1.51,1.51,$fn=60);}
+		}}
+		translate([(h2-7)/2,l2/2.4,25]){
+			rotate([90,0,0]){cylinder(30,1.51,1.51,$fn=60);}
+		}
+		
+	hull(){for(i=[0:1]){
+		translate([(h2-7)/2,l2/4,30-6*i]){
+			rotate([90,0,0]){cylinder(4,2.9,2.9,$fn=60);}
+		}
+	}}
+	}
+}
+//1.8
