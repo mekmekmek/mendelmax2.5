@@ -155,6 +155,12 @@
 // average current. The value should be an integer and the heat bed will be turned on for 1 interval of
 // HEATER_BED_DUTY_CYCLE_DIVIDER intervals.
 //#define HEATER_BED_DUTY_CYCLE_DIVIDER 4
+///////////////////////////////////////////////////77
+//aktivate for reprappro!
+// Extruder thermistor: RS 198-961 100k ohm 10% DO-35 NTC thermistor - All Mendels before 1/4/13
+#define E_BETA 3960.0
+#define E_NTC 100000.0
+/////////////////////////////////////////////////////////
 
 // PID settings:
 // Comment the following line to disable PID and enable bang-bang.
@@ -182,9 +188,18 @@
 //    #define  DEFAULT_Kd 12
 
 // Mendel Parts V9 on 12V
-    #define  DEFAULT_Kp 63.0
-    #define  DEFAULT_Ki 2.25
-    #define  DEFAULT_Kd 440
+//    #define  DEFAULT_Kp 63.0
+//    #define  DEFAULT_Ki 2.25
+//    #define  DEFAULT_Kd 440
+
+// ReprapPro
+#define PID_INTEGRAL_DRIVE_MAX 125 //limit for the integral term
+#define PID_dT 0.122 //sampling period of the PID
+#define DEFAULT_Kp 12.0
+#define DEFAULT_Ki (2.2*PID_dT)
+#define DEFAULT_Kd (80/PID_dT)
+
+
 #endif // PIDTEMP
 
 // Bed Temperature Control
