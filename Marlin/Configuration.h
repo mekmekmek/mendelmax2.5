@@ -155,16 +155,11 @@
 // average current. The value should be an integer and the heat bed will be turned on for 1 interval of
 // HEATER_BED_DUTY_CYCLE_DIVIDER intervals.
 //#define HEATER_BED_DUTY_CYCLE_DIVIDER 4
-///////////////////////////////////////////////////77
-//aktivate for reprappro!
-// Extruder thermistor: RS 198-961 100k ohm 10% DO-35 NTC thermistor - All Mendels before 1/4/13
-//#define E_BETA 3960.0
-//#define E_NTC 100000.0
-/////////////////////////////////////////////////////////
+
 
 // PID settings:
 // Comment the following line to disable PID and enable bang-bang.
-//#define PIDTEMP
+#define PIDTEMP
 #define BANG_MAX 255 // limits current to nozzle while in bang-bang mode; 255=full current
 #define PID_MAX 255 // limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
 #ifdef PIDTEMP
@@ -192,7 +187,12 @@
 //    #define  DEFAULT_Ki 2.25
 //    #define  DEFAULT_Kd 440
 
-// ReprapPro
+// marlin
+  #define  DEFAULT_Kp 21.50
+   #define  DEFAULT_Ki 1.47
+   #define  DEFAULT_Kd 81
+
+// ReprapPro nogood
 //#define PID_INTEGRAL_DRIVE_MAX 125 //limit for the integral term
 //#define PID_dT 0.122 //sampling period of the PID
 //#define DEFAULT_Kp 12.0
