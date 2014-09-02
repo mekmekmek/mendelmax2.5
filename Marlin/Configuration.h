@@ -1,4 +1,5 @@
-#ifndef CONFIGURATION_H
+
+ #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
 
 // This configuration file contains the basic settings.
@@ -16,7 +17,7 @@
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
 #define STRING_VERSION_CONFIG_H __DATE__ " " __TIME__ // build date and time
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Mekmekmek, default config)" // Who made the changes.
 
 // SERIAL_PORT selects which serial port should be used for communication with the host.
 // This allows the connection of wireless adapters (for instance) to non-default port pins.
@@ -121,7 +122,7 @@
 // 52 is 200k thermistor - ATC Semitec 204GT-2 (1k pullup)
 // 55 is 100k thermistor - ATC Semitec 104GT-2 (Used in ParCan & J-Head) (1k pullup)
 
-#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_0 3
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_BED 60
@@ -187,17 +188,20 @@
 //    #define  DEFAULT_Ki 2.25
 //    #define  DEFAULT_Kd 440
 
-// marlin
-  #define  DEFAULT_Kp 21.50
-   #define  DEFAULT_Ki 1.47
-   #define  DEFAULT_Kd 81
+// j-head 28022014mekmekmek
+//  #define  DEFAULT_Kp 21
+//   #define  DEFAULT_Ki 1.2
+//   #define  DEFAULT_Kd 87
 
-// ReprapPro nogood
-//#define PID_INTEGRAL_DRIVE_MAX 125 //limit for the integral term
-//#define PID_dT 0.122 //sampling period of the PID
-//#define DEFAULT_Kp 12.0
-//#define DEFAULT_Ki (2.2*PID_dT)
-//#define DEFAULT_Kd (80/PID_dT)
+// marlin 27022014mekmekmek
+//  #define  DEFAULT_Kp 21.50
+//   #define  DEFAULT_Ki 1.47
+//  #define  DEFAULT_Kd 81
+
+// ReprapPro 28022014mekmekmek
+  #define  DEFAULT_Kp 18.5
+  #define  DEFAULT_Ki 2.5
+  #define  DEFAULT_Kd 34
 
 
 #endif // PIDTEMP
