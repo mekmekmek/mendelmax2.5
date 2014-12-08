@@ -17,7 +17,7 @@ dy=16;
 difference(){
 translate([-h2,l2*2/3,0]){cube([h2,l2/3,l3]);}
 translate([-h2+3,l2*2/3,6]){cube([h2-6,l2/3,l3]);}
-translate([-h2,(l2*2/3)+(dy/2),6]){cube([h2,l2/3-dy,l3]);}
+translate([-h2,(l2*2/3)+(dy/2),6]){cube([h2,l2/3-dy,l3*0.75]);}
 }
 
 
@@ -33,7 +33,7 @@ translate([-h2*3,l2*2/3,0]){
 		
 	hull(){for(i=[0:1]){
 		translate([(h2-7)/2,l2/4,30-6*i]){
-			rotate([90,0,0]){cylinder(4,2.9,2.9,$fn=60);}
+			rotate([90,0,0]){cylinder(4.1,3,3,$fn=60);}
 		}
 	}}
 	}

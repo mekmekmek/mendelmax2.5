@@ -1,11 +1,11 @@
 dk=22;
 res=50;
 difference(){
-	hull(){for(k=[1:dk]){translate([0,k,0]){
-		hull(){for(i=[1:dk]){
+	hull(){for(k=[1,dk]){translate([0,k,0]){
+		hull(){for(i=[1,dk]){
 			translate([0,0,i/2]){cylinder(1,4/i,4/i,$fn=res,true);}
 		}}
 	}}}
-	for(i=[1,dk]){translate([0,i,25]){cylinder(50,1.3,1.3,$fn=res,true);}}
-for(i=[1,dk]){translate([0,i,30]){cylinder(50,3,3,$fn=res,true);}}
+	for(i=[1,dk]){translate([0,i,25]){cylinder(50,1.51,1.51,$fn=res,true);}}
+for(i=[1,dk]){translate([0,i,30]){cylinder(50,3.2,3.2,$fn=res,true);}}
 }
